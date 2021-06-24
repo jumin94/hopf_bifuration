@@ -110,4 +110,12 @@ def legendre_polinomials(n_points):
 
 
 # Test
-X, dX = generate_hopf_fulldata(200)
+#X, dX = generate_hopf_fulldata(200)
+
+if __name__ == '__main__':
+    import os
+    ntraj = 500
+    data = get_hopf_data(ntraj)
+    x, x_dot = data['x'], data['dx']
+    os.makedirs("datahopf",exist_ok=True)
+    np.save("datahopf/hopf{}".format(ntraj),[x,x_dot])
