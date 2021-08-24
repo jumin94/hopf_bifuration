@@ -115,7 +115,6 @@ def legendre_polinomials(n_points):
 if __name__ == '__main__':
     import os
     ntraj = 500
-    data = generate_hopf_fulldata(ntraj)
-    x, x_dot = data
+    x, x_dot = generate_hopf_fulldata(ntraj)
     os.makedirs("datahopf",exist_ok=True)
     np.save("datahopf/hopf{}".format(ntraj),[x,x_dot])
